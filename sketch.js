@@ -83,7 +83,10 @@ function feedDog(){
 
 //function to add food in stock
 function addFoods(){
-  foodS++;
+  if(foodS>=30){
+    foodS = 0;
+  }
+  foodS+=1;
   database.ref('/').update({
     Food:foodS
   })
